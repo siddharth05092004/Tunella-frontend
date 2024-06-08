@@ -11,14 +11,11 @@ export default {
     "./src/pages/YoutubeExport.jsx",
     "./src/pages/SharePage.jsx",
     "./src/components/Navbar.jsx",
-    "./src/components/PlaylistCard.jsx",
-    'node_modules/preline/dist/*.js',
+    "./src/components/PlaylistCard.jsx"
   ],
   theme: {
     extend: {},
   },
-  plugins: [
-    require('preline/plugin'),
-  ],
+  plugins: [],
 }
 
