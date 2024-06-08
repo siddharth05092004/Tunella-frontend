@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import PlaylistCard from "../components/PlaylistCard";
 import querystring from "querystring";
 import Footer from "../components/Footer";
-import toast, { Toaster } from "react-hot-toast";
+import {toast,  Toaster } from "react-hot-toast";
 
 function YoutubeImport() {
   let youtube_access_token = "";
@@ -222,7 +222,7 @@ function YoutubeImport() {
 
 <div className="bg-indigo-600 h-full min-h-screen overflow-hidden">
         <Navbar />
-        import toast, { Toaster } from "react-hot-toast";
+        <Toaster position="top-right"/>
         <div className="m-3 grid grid-cols-1 place-items-center md:flex justify-center items-center">
           <div>
             <div className="justify-center flex mt-10 text-5xl text-gray-100">
