@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import PlaylistCard from "../components/PlaylistCard";
 import querystring from 'querystring';
-import { motion } from "framer-motion"
+
 
 function SpotifyImport() {
   let spotify_access_token = "";
