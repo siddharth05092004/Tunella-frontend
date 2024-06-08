@@ -38,6 +38,10 @@ function SpotifyImport() {
         Authorization: "Bearer " + spotify_access_token,
       },
     });
+    console.log(response)
+    if(response.status==403){
+      window.location="/test-credentials"
+    }
     const user_data = await response.json();
     console.log(user_data)
     spotify_user_id = user_data["id"];

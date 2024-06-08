@@ -23,12 +23,24 @@ function SpotifyExport(props) {
     }
     if (window.location.hash) {
       spotify_access_token = window.location.hash.split("&")[0].substring(14);
+      check_validity(spotify_access_token);
     }
     else{
       window.location = redirect_to_spotify;
     }
     
   }, []);
+
+  async function check_validity(){
+    const response = await fetch("https://api.spotify.com/v1/me", {
+      headers: {
+        Authorization: "Bearer " + spotify_access_token,
+      },
+    });
+    if(response.status==403){
+      window.location="/test-credentials"
+    }
+  }
 
   async function add_track_to_playlist(
     spotify_playlist_id,
