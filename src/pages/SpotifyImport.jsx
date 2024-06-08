@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import PlaylistCard from "../components/PlaylistCard";
 import querystring from 'querystring';
+import toast, { Toaster } from "react-hot-toast";
 
 
 function SpotifyImport() {
@@ -137,6 +138,8 @@ function SpotifyImport() {
     const confirmation = window.confirm(`A total of ${no_of_playlist} playlists will be shared. Do you want to continue?`);
 
     if(confirmation){
+
+      toast.loading("Wait while we generate a code for the data.")
       const database_response = await fetch(process.env.REACT_APP_BACKEND_URI,{method:"POST",
             
       headers: {
@@ -187,6 +190,7 @@ function SpotifyImport() {
     <>
       <div className="bg-indigo-900 h-full min-h-screen overflow-hidden">
         <Navbar />
+        <Toaster position="top-right"/>
         <div className="m-3 grid grid-cols-1 place-items-center md:flex justify-center items-center">
           <div>
             <div className="justify-center flex mt-10 text-5xl text-gray-100">
