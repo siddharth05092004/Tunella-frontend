@@ -2,6 +2,7 @@ import Navbar from "../components/Navbar";
 import { useEffect, useState } from "react";
 import querystring from "querystring";
 import toast, { Toaster } from "react-hot-toast";
+import Footer from "../components/Footer";
 
 function YoutubeExport() {
   let youtube_access_token = "";
@@ -119,11 +120,11 @@ function YoutubeExport() {
 
   return (
     <>
-      <div className="bg-indigo-900 h-full min-h-screen overflow-hidden">
+      <div className="bg-indigo-600 h-full min-h-screen overflow-hidden">
         <Navbar />
         <Toaster position="bottom-right" />
         <div className="m-6 md:m-12 text-gray-100 grid grid-cols-1 grid-items-center place-items-center">
-          <p className="max-w-5xl mt-10 text-2xl font-mono sm:mt-20 sm:text-2xl md:text-4xl text-red-500 flex justify-center">
+          <p className="max-w-5xl mt-10 text-2xl font-mono sm:mt-20 sm:text-2xl md:text-4xl text-red-400 flex justify-center">
             Hi! Enter the code and the playlists will be added to your youtube
             account.
           </p>
@@ -141,6 +142,7 @@ function YoutubeExport() {
             </button></div>
           </div>
         </div>
+        <Footer/>
       </div>
     </>
   );

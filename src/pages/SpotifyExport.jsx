@@ -2,8 +2,18 @@ import Navbar from "../components/Navbar";
 import { useEffect, useState } from "react";
 import querystring from "querystring";
 import toast, { Toaster } from "react-hot-toast";
+import Footer from "../components/Footer";
 
 function SpotifyExport() {
+  const redirect_to_spotify =
+    "https://accounts.spotify.com/authorize?" +
+    querystring.stringify({
+      response_type: "token",
+      client_id: process.env.REACT_APP_SPOTIFY_CLIENT_ID,
+      scope: "playlist-modify-public playlist-modify-private",
+      redirect_uri: process.env.REACT_APP_SPOTIFY_REDIRECT_URI_EXPORT,
+    });
+
   let spotify_access_token = "";
   let spotify_user_id = "";
 
@@ -13,6 +23,9 @@ function SpotifyExport() {
     }
     if (window.location.hash) {
       spotify_access_token = window.location.hash.split("&")[0].substring(14);
+    }
+    else{
+      window.location = redirect_to_spotify;
     }
   }, []);
 
@@ -119,11 +132,11 @@ function SpotifyExport() {
 
   return (
     <>
-      <div className="bg-indigo-900 h-full min-h-screen overflow-hidden">
+      <div className="bg-indigo-600 h-full min-h-screen overflow-hidden">
         <Navbar />
         <Toaster position="bottom-right" />
         <div className="m-6 md:m-12 text-gray-100 grid grid-cols-1 grid-items-center place-items-center">
-          <p className="max-w-5xl mt-10 text-2xl font-mono sm:mt-20 sm:text-2xl md:text-4xl text-green-400 flex justify-center">
+          <p className="max-w-5xl mt-10 text-2xl font-mono sm:mt-20 sm:text-2xl md:text-4xl text-green-300 flex justify-center">
             Hi! Enter the code and the playlists will be added to your spotify
             account.
           </p>
@@ -141,6 +154,7 @@ function SpotifyExport() {
             </button></div>
           </div>
         </div>
+        <Footer/>
       </div>
     </>
   );

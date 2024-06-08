@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import PlaylistCard from "../components/PlaylistCard";
 import querystring from "querystring";
+import Footer from "../components/Footer";
 
 function YoutubeImport() {
   let youtube_access_token = "";
@@ -217,7 +218,7 @@ function YoutubeImport() {
       </div> */}
 
 
-<div className="bg-indigo-900 h-full min-h-screen overflow-hidden">
+<div className="bg-indigo-600 h-full min-h-screen overflow-hidden">
         <Navbar />
         <div className="m-3 grid grid-cols-1 place-items-center md:flex justify-center items-center">
           <div>
@@ -265,6 +266,7 @@ function YoutubeImport() {
             );
           })}
         </div>
+        
       </div>
     
 

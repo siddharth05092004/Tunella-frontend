@@ -60,12 +60,12 @@ function SharePage() {
 
   return (
     <>
-      <div className="bg-indigo-900 min-h-screen h-full overflow-hidden">
+      <div className="bg-indigo-600 min-h-screen h-full overflow-hidden">
         <Navbar />
         <Toaster position="bottom-right" />
         <div className="grid grid-cols-1 place-items-center  justify-center items-center">
           <div className="m-6 sm:m-10">
-            <div className="m-5 grid grid-cols-1 justify-center text-md sm:text-xl md:text-2xl mt-4 text-green-400 font-mono">
+            <div className="m-5 grid grid-cols-1 justify-center text-md sm:text-xl md:text-2xl mt-4 text-red-300 font-mono">
               <div>
                 Following are the playlists. In order to share this page to a
                 friend, copy this link:{" "}

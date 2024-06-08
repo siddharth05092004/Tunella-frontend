@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import PlaylistCard from "../components/PlaylistCard";
 import querystring from 'querystring';
+import Footer from "../components/Footer";
 import toast, { Toaster } from "react-hot-toast";
 
 
@@ -188,7 +189,7 @@ function SpotifyImport() {
 
   return (
     <>
-      <div className="bg-indigo-900 h-full min-h-screen overflow-hidden">
+      <div className="bg-indigo-600 h-full min-h-screen overflow-hidden">
         <Navbar />
         <Toaster position="top-right"/>
         <div className="m-3 grid grid-cols-1 place-items-center md:flex justify-center items-center">
@@ -238,6 +239,7 @@ function SpotifyImport() {
             );
           })}
         </div>
+        
       </div>
     </>
   );

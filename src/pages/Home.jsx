@@ -38,7 +38,7 @@ function Home(props) {
 
   return (
     <>
-      <div className="bg-indigo-900 text-gray-200 h-screen">
+      <div className="bg-indigo-600 text-gray-200 h-screen">
         <Navbar />
         <Toaster position="bottom-right" />
         <motion.div
@@ -87,6 +87,7 @@ function Home(props) {
             </div>
           </div>
         </motion.div>
+        <Footer/>
       </div>
     </>
   );
