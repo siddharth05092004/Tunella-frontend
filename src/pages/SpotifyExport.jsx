@@ -136,7 +136,7 @@ function SpotifyExport() {
             <div className="m-8 flex justify-center items-center">
             <button
               onClick={fetch_playlist_data}
-              className="h-16 rounded-xl text-3xl p-1 bg-gradient-to-br from-green-400 to-blue-600 text-gray-100 transition duration-200 hover:bg-green-500 "
+              className="hover:scale-105  h-16 rounded-xl text-3xl p-1 bg-gradient-to-br from-green-400 to-blue-600 text-gray-100 transition duration-200 hover:bg-green-500 "
               ><span className="transition-all ease-in duration-100 bg-indigo-900  rounded-lg p-2 hover:bg-opacity-0">Submit</span>
             </button></div>
           </div>

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import PlaylistCard from "../components/PlaylistCard";
 import querystring from 'querystring';
+import { motion } from "framer-motion"
 
 function SpotifyImport() {
   let spotify_access_token = "";
@@ -199,7 +200,7 @@ function SpotifyImport() {
           <div>
             <button
               onClick={Share_spotify_playlists}
-              className="mt-3 sm:mt-1 p-2 border-4 rounded-xl border-gray-800 bg-red-800 transition-all ease-in duration-150 hover:bg-red-700 text-gray-200 text-4xl"
+              className=" hover:scale-105 mt-3 sm:mt-1 p-2 border-4 rounded-xl border-gray-800 bg-green-400 transition-all ease-in duration-150 hover:bg-green-500 text-gray-800 text-4xl"
             >
               Share!
             </button>
@@ -217,11 +218,12 @@ function SpotifyImport() {
             }
             return (
               <div
-                className="rounded-2xl m-4"
+                className="rounded-2xl m-4 transition-all duration-300 hover:scale-105"
                 id={index.toString()}
                 onClick={() => toggle_array_spotify(index)}
               >
                 <PlaylistCard
+                  
                   description={playlist_data[key]["description"]}
                   key={index}
                   name={playlist_data[key]["name"]}

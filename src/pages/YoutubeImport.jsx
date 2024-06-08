@@ -232,7 +232,7 @@ function YoutubeImport() {
           <div>
             <button
               onClick={Share_youtube_playlists}
-              className="mt-3 sm:mt-1 p-2 border-4 rounded-xl border-gray-800 bg-red-800 transition-all ease-in duration-150 hover:bg-red-700 text-gray-200 text-4xl"
+              className="hover:scale-105  mt-3 sm:mt-1 p-2 border-4 rounded-xl border-gray-800 bg-red-800 transition-all ease-in duration-150 hover:bg-red-700 text-gray-200 text-4xl"
             >
               Share!
             </button>
@@ -250,7 +250,7 @@ function YoutubeImport() {
             }
             return (
               <div
-                className="rounded-2xl m-4"
+                className="rounded-2xl m-4 transition-all duration-300 hover:scale-105"
                 id={index.toString()}
                 onClick={() => toggle_array_youtube(index)}
               >

@@ -75,17 +75,35 @@ function SharePage() {
           </div>
           <div>
             
-            <div className="flex">
-          <a href={redirect_to_spotify} className="px-12">
-              <img src="assets/logos/spotify.png" className="w-20" alt="" />
-            </a>
-            <a href={redirect_to_youtube} className="px-12">
-              <img src="assets/logos/youtube.png" className="w-24" alt="" />
-            </a>
+          <div className="flex justify-center">
+            <div className="text-gray-200 grid max-w-2xl place-items-center grid-items-center grid-cols-1  md:mx-24 md:grid-cols-2 text-4xl">
+              <a
+                href={redirect_to_spotify}
+                className="transition-all duration-300 hover:scale-105 p-4 sm:p-8 flex gap-4 justify-center items-center"
+              >
+                <img
+                  src="assets/logos/spotify.png"
+                  className="w-14 sm:w-16"
+                  alt=""
+                />
+                <span>Spotify</span>
+              </a>
+              <a
+                href={redirect_to_youtube}
+                className="transition-all duration-300 hover:scale-105 p-4 sm:p-8 flex gap-4 justify-center items-center"
+              >
+                <img
+                  src="assets/logos/youtube.png"
+                  className="w-14 sm:w-20"
+                  alt=""
+                />
+                <span>YouTube</span>
+              </a>
             </div>
           </div>
+          </div>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 m-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 m-8 ">
           {Object.keys(share_page_data).map(function (key, index) {
             // console.log(playlist_data[key]["external_urls"]["spotify"])
             return (
