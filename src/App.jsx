@@ -7,7 +7,7 @@ import YoutubeImport from './pages/YoutubeImport.jsx';
 import YoutubeExport from './pages/YoutubeExport.jsx';
 import SharePage from "./pages/SharePage.jsx";
 import Home from './pages/Home.jsx';
-
+import TestCredentials from './pages/TestCredentials.jsx';
 
 function App() {
 
@@ -25,6 +25,8 @@ function App() {
         <Route path="/youtube-import" element={<YoutubeImport/>} />
         <Route path="/youtube-export" element={<YoutubeExport/>} />
         <Route path="/share" element={<SharePage/>} />
+
+        <Route path="/test-credentials" element={<TestCredentials/>} />
 
         
       </Routes>

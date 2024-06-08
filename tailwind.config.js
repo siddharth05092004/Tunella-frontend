@@ -11,7 +11,8 @@ export default {
     "./src/pages/YoutubeExport.jsx",
     "./src/pages/SharePage.jsx",
     "./src/components/Navbar.jsx",
-    "./src/components/PlaylistCard.jsx"
+    "./src/components/PlaylistCard.jsx",
+    "./src/components/TestCredentials.jsx",
   ],
   theme: {
     extend: {},

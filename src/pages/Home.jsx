@@ -57,7 +57,7 @@ function Home(props) {
             <p align="justify" className="py-5 text-lg max-w-3xl font-mono">
               Tunella is a web app that helps you convert/share your favourite
               playlists across YouTube and Spotify. To get started choose the
-              platform you want to import your playlists from.
+              platform you want to import your playlists from. <a href="/test-credentials" className="text-gray-400 transition-all duration-200 hover:text-gray-200 underline">Test Credentials</a>
             </p>
           </div>
           <div className="flex justify-center">
