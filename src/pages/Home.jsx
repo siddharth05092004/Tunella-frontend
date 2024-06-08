@@ -19,6 +19,12 @@ function Home(props) {
     if (props.value == "quota-over") {
       toast.error("Youtube Data API quota over");
     }
+    if (props.value == "default") {
+      window.location = "/default-error"
+    }
+    if(props.value == "default-error"){
+      toast.error("Page Not Found");
+    }
   }, []);
 
   const redirect_to_spotify =

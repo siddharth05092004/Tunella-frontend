@@ -29,6 +29,10 @@ function App() {
 
         <Route path="/test-credentials" element={<TestCredentials/>} />
 
+        <Route path="/default-error" element={<Home value="default-error"/>}/>
+
+        <Route path="*" element={<Home value = "default"/>} />
+
         
       </Routes>
     </BrowserRouter>
