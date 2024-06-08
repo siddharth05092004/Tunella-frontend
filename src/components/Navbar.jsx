@@ -1,4 +1,6 @@
 import {useEffect, useState } from "react";
+import { motion } from "framer-motion";
+
 
 function Navbar() {
 
@@ -12,7 +14,11 @@ function Navbar() {
       
       
 
-      <header class="flex flex-wrap sm:justify-start sm:flex-nowrap w-full text-sm py-4 bg-neutral-800">
+      <motion.header
+          initial={{ opacity: 0, y:-50}}
+          whileInView={{ opacity: 1,y:0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }} class="flex flex-wrap sm:justify-start sm:flex-nowrap w-full text-sm py-4 bg-neutral-800">
   <nav class="max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between" aria-label="Global">
     <div class="flex items-center justify-between">
       <div className="flex justify-center gap-4">
@@ -28,7 +34,7 @@ function Navbar() {
       </div>
     </div>
   </nav>
-</header>
+</motion.header>
     </>
   );
 }

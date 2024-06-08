@@ -3,6 +3,7 @@ import Footer from "../components/Footer.jsx";
 import querystring from "querystring";
 import { useEffect } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import { motion } from "framer-motion";
 
 function Home(props) {
   useEffect(() => {
@@ -40,7 +41,13 @@ function Home(props) {
       <div className="bg-indigo-900 text-gray-200 h-screen">
         <Navbar />
         <Toaster position="bottom-right" />
-        <div className="m-8 md:m-16">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.1}}
+          viewport={{ once: true }}
+          className="m-8 md:m-16"
+        >
           <div className="flex justify-center">
             <span className="py-5 text-4xl md:text-6xl ">
               Welcome to Tunella!
@@ -79,7 +86,7 @@ function Home(props) {
               </a>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </>
   );
