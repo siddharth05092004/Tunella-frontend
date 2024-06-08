@@ -4,7 +4,16 @@ import querystring from "querystring";
 import toast, { Toaster } from "react-hot-toast";
 import Footer from "../components/Footer";
 
-function YoutubeExport() {
+function YoutubeExport(props) {
+  const redirect_to_youtube =
+    "https://accounts.google.com/o/oauth2/auth?" +
+    querystring.stringify({
+      client_id: process.env.REACT_APP_YOUTUBE_CLIENT_ID,
+      redirect_uri: process.env.REACT_APP_YOUTUBE_REDIRECT_URI_EXPORT,
+      scope: "https://www.googleapis.com/auth/youtube.force-ssl",
+      response_type: "token",
+    });
+
   let youtube_access_token = "";
   const max_tries = 3;
 
@@ -59,6 +68,10 @@ function YoutubeExport() {
     if (window.location.hash) {
       youtube_access_token = window.location.hash.split("&")[0].substring(14);
     }
+    else{
+      window.location = redirect_to_youtube;
+    }
+    
   }, []);
 
   async function add_youtube_playlist(playlist_data) {
@@ -109,13 +122,18 @@ function YoutubeExport() {
     );
 
     let response_database_json = await response_database.json();
+
+    if(response_database_json['error'] == "Can't fetch playlist data"){
+      toast.error("Wrong code provided!")
+    }
+else{
     response_database_json = await response_database_json["data"];
     const confirmation = window.confirm(
       `A total of ${response_database_json.length} playlists will be added to your Youtube account`
     );
     if (confirmation) {
       add_playlists_to_youtube(response_database_json);
-    }
+    }}
   }
 
   return (

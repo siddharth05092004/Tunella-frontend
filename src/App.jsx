@@ -19,6 +19,7 @@ function App() {
         <Route path="/spotify-login-error" element={<Home value="spotify-login-error"/>}/>
         <Route path="/youtube-login-error" element={<Home value="youtube-login-error"/>}/>
         <Route path="/playlist-get-error" element={<Home value="playlist-get-error"/>}/>
+        
         <Route path="/spotify-import" element={<SpotifyImport/>} />
         <Route path="/spotify-export" element={<SpotifyExport/>} />
         <Route path="/youtube-import" element={<YoutubeImport/>} />

@@ -4,7 +4,7 @@ import querystring from "querystring";
 import toast, { Toaster } from "react-hot-toast";
 import Footer from "../components/Footer";
 
-function SpotifyExport() {
+function SpotifyExport(props) {
   const redirect_to_spotify =
     "https://accounts.spotify.com/authorize?" +
     querystring.stringify({
@@ -27,6 +27,7 @@ function SpotifyExport() {
     else{
       window.location = redirect_to_spotify;
     }
+    
   }, []);
 
   async function add_track_to_playlist(
@@ -120,6 +121,11 @@ function SpotifyExport() {
     );
 
     let response_database_json = await response_database.json();
+
+    if(response_database_json['error'] == "Can't fetch playlist data"){
+      toast.error("Wrong code provided!")
+    }
+    else{
     response_database_json = await response_database_json["data"];
     console.log(response_database_json)
     const confirmation = window.confirm(
@@ -127,7 +133,7 @@ function SpotifyExport() {
     );
     if (confirmation) {
       add_playlists_to_spotify(response_database_json);
-    }
+    }}
   }
 
   return (
