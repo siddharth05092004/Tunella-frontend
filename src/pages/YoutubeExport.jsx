@@ -61,12 +61,15 @@ function YoutubeExport(props) {
     );
   }
 
+
+
   useEffect(() => {
     if (window.location.hash.includes("error")) {
       window.location = "/youtube-login-error";
     }
     if (window.location.hash) {
       youtube_access_token = window.location.hash.split("&")[0].substring(14);
+      
     }
     else{
       window.location = redirect_to_youtube;
@@ -95,24 +98,28 @@ function YoutubeExport(props) {
       }
     );
 
+    if(response.status==403){
+      window.location="/quota-over"
+    }
+    toast.success("Congrats! Check for the playlist in your Youtube account.");
     let created_playlist_id_response = await response.json();
     created_playlist_id_response = created_playlist_id_response["id"];
     console.log(created_playlist_id_response);
     playlist_data["playlist_track_data"].map((key, index) => {
-      add_track_to_playlist(
+      if(index < 5){add_track_to_playlist(
         created_playlist_id_response,
         key,
         youtube_access_token
-      );
+      )}
     });
   }
 
   async function add_playlists_to_youtube(playlists_data) {
-    playlists_data.map((key, index) => {
-      add_youtube_playlist(key);
+    await playlists_data.map((key, index) => {
+       add_youtube_playlist(key);
     });
     // console.log("done")
-    toast.success("Congrats! Check for the playlist in your Spotify account.");
+    
   }
 
   async function fetch_playlist_data() {

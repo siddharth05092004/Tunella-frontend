@@ -161,6 +161,9 @@ function YoutubeImport() {
           access_token: youtube_access_token,
         })
     );
+    if(user_channel_response.status==403){
+      window.location="/quota-over"
+    }
     user_channel_response = await user_channel_response.json();
     set_youtube_user_name(
       user_channel_response["items"][0]["snippet"]["title"]

@@ -16,6 +16,9 @@ function Home(props) {
     if (props.value == "playlist-get-error") {
       toast.error("Can't fetch playlist data");
     }
+    if (props.value == "quota-over") {
+      toast.error("Youtube Data API quota over");
+    }
   }, []);
 
   const redirect_to_spotify =
