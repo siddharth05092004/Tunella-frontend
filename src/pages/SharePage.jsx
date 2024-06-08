@@ -73,11 +73,11 @@ function SharePage() {
                   className="text-lg sm:text-2xl md:text-3xl flex hover:cursor-pointer text-gray-300 transition duration-200  hover:text-gray-100 line-clamp-1"
                   onClick={select_url}
                 >
-                  {window.location.href}{" "}
                   <img className="w-6 invert"
                     src="/assets/icons/copy.svg"
                     alt=""
                   />
+                  {window.location.href}{" "}
                 </div>{" "}
               </div>
               <div>
@@ -87,11 +87,11 @@ function SharePage() {
                   className="text-lg sm:text-2xl md:text-3xl flex hover:cursor-pointer text-gray-300 transition duration-200  hover:text-gray-100"
                   onClick={select_code}
                 >
-                  {window.location.hash.substring(1)}
                   <img className="w-6 invert"
                     src="/assets/icons/copy.svg"
                     alt=""
                   />
+                  {window.location.hash.substring(1)}
                 </div>
               </div>
             </div>
