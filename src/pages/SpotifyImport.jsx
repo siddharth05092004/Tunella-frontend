@@ -29,12 +29,14 @@ function SpotifyImport() {
   }
 
   async function getPlaylists(spotify_access_token) {
+
     const response = await fetch("https://api.spotify.com/v1/me", {
       headers: {
         Authorization: "Bearer " + spotify_access_token,
       },
     });
     const user_data = await response.json();
+    console.log(user_data)
     spotify_user_id = user_data["id"];
     set_display_name(user_data["display_name"]);
     const response_playlists = await fetch(

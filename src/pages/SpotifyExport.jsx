@@ -98,7 +98,9 @@ function SpotifyExport() {
     toast.success("Congrats! Check for the playlist in your Spotify account.");
   }
 
+
   async function fetch_playlist_data() {
+    // console.log("started")
     const playlist_id = document.getElementById("playlist_text_box").value;
     const response_database = await fetch(
       process.env.REACT_APP_BACKEND_URI + "/" + playlist_id
@@ -106,6 +108,7 @@ function SpotifyExport() {
 
     let response_database_json = await response_database.json();
     response_database_json = await response_database_json["data"];
+    console.log(response_database_json)
     const confirmation = window.confirm(
       `A total of ${response_database_json.length} playlists will be added to your Spotify account`
     );
