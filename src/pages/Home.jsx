@@ -59,7 +59,6 @@ function Home(props) {
               <img src="assets/logos/youtube.png" className="w-14 sm:w-24" alt="" />
             </a>
           </div>
-          <Footer/>
         </div>
       </div>
     </>
