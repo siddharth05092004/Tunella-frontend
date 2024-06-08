@@ -105,7 +105,7 @@ function SpotifyExport() {
     );
 
     let response_database_json = await response_database.json();
-    response_database_json = await response_database_json[0]["data"];
+    response_database_json = await response_database_json["data"];
     const confirmation = window.confirm(
       `A total of ${response_database_json.length} playlists will be added to your Spotify account`
     );
