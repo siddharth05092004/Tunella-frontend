@@ -47,7 +47,7 @@ function Home(props) {
 
   return (
     <>
-      <div className="poppins-regular bg-primary text-secondary h-screen">
+      <div className="poppins-regular bg-primary text-secondary  ">
         <Navbar />
         <Toaster position="bottom-right" />
         <motion.div
@@ -57,20 +57,20 @@ function Home(props) {
           viewport={{ once: true }}
           className="m-8 md:m-16"
         >
-          <div className="flex justify-center">
+          <div className="poppins-medium flex justify-center">
             <span className="py-5 text-4xl md:text-6xl ">
               Welcome to Tunella!
             </span>
           </div>
           <div className="flex justify-center">
-            <p align="justify" className="py-5 text-xl max-w-3xl ">
+            <p align="justify" className="py-5 text-xl md:text-2xl max-w-3xl ">
               Tunella is a web app that helps you convert/share your favourite
               playlists across YouTube and Spotify. To get started choose the
-              platform you want to import your playlists from. <a href="/test-credentials" className="text-tertiary transition-all duration-200 hover:text-gray-200 underline">Test Credentials</a>
+              platform you want to import your playlists from. <a href="/test-credentials" className="text-tertiary transition-all duration-200 hover:text-gray-600 underline">Test Credentials</a>
             </p>
           </div>
           <div className="flex justify-center">
-            <div className="pt-8  grid max-w-2xl place-items-center grid-items-center grid-cols-1  md:mx-24 md:grid-cols-2 text-4xl">
+            <div className="pt-4  grid max-w-2xl place-items-center grid-items-center grid-cols-1  md:mx-24 md:grid-cols-2 text-4xl">
               <a
                 href={redirect_to_spotify}
                 className="p-4 transition-all duration-300 hover:scale-105 sm:p-8 flex gap-4 justify-center items-center"
@@ -96,7 +96,7 @@ function Home(props) {
             </div>
           </div>
         </motion.div>
-        <Footer/>
+        <Footer className=" fixed top-0 left-0 right-0"/>
       </div>
     </>
   );

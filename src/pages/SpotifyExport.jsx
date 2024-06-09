@@ -150,7 +150,7 @@ function SpotifyExport(props) {
 
   return (
     <>
-      <div className="poppins-regular bg-primary h-full min-h-screen overflow-hidden">
+      <div className="poppins-regular bg-primary h-full overflow-hidden">
         <Navbar />
         <Toaster position="bottom-right" />
         <div className="m-6 md:m-12 text-gray-100 grid grid-cols-1 grid-items-center place-items-center">
@@ -167,8 +167,8 @@ function SpotifyExport(props) {
             <div className="m-8 flex justify-center items-center">
             <button
               onClick={fetch_playlist_data}
-              className="hover:scale-105  h-16 rounded-xl text-3xl p-1 bg-gradient-to-br from-green-400 to-blue-600 text-gray-100 transition duration-200 hover:bg-green-500 "
-              ><span className="transition-all ease-in duration-100 bg-secondary  rounded-lg p-2 hover:bg-opacity-0">Submit</span>
+              className="bg-secondary text-gray-200 text-2xl poppins-medium transition-all duration-150 hover:opacity-95 hover:scale-105 px-10 py-4 rounded-xl"
+              ><span className="">Submit</span>
             </button></div>
           </div>
         </div>

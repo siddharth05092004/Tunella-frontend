@@ -97,6 +97,11 @@ function SpotifyImport() {
 
   async function Share_spotify_playlists() {
     // console.log("hi")
+
+    if(!spotify_selected_array.filter(x => x==1).length){
+      toast.error("Select atleast 1 playlist!")
+    }
+
     let spotify_data_to_be_shared = [];
     spotify_selected_array.map(async (element, index) => {
       if (element) {
@@ -167,12 +172,12 @@ function SpotifyImport() {
     let arr_after_toggle = spotify_selected_array;
     if (arr_after_toggle[index]) {
       arr_after_toggle[index] = 0;
-      change_bg_element.classList.remove("border-red-400");
-      change_bg_element.classList.remove("border-4");
+      change_bg_element.classList.remove("border-gray-200");
+      change_bg_element.classList.remove("border-8");
     } else {
       arr_after_toggle[index] = 1;
-      change_bg_element.classList.add("border-red-400");
-      change_bg_element.classList.add("border-4");
+      change_bg_element.classList.add("border-gray-200");
+      change_bg_element.classList.add("border-8");
     }
     set_spotify_selected_array(arr_after_toggle);
     set_playlist_data(playlist_data);
@@ -193,10 +198,10 @@ function SpotifyImport() {
 
   return (
     <>
-      <div className="poppins-regular bg-primary h-full min-h-screen overflow-hidden">
+      <div className="poppins-regular bg-primary h-full  overflow-hidden">
         <Navbar />
         <Toaster position="top-right"/>
-        <div className="m-3 grid grid-cols-1 place-items-center md:flex justify-center items-center">
+        <div className="m-3 grid grid-cols-1 place-items-center md:flex justify-center items-center gap-8">
           <div>
             <div className="justify-center flex mt-10 text-5xl text-secondary">
               Hi, {display_name}
@@ -209,9 +214,9 @@ function SpotifyImport() {
           <div>
             <button
               onClick={Share_spotify_playlists}
-              className=" hover:scale-105  h-16 rounded-xl text-3xl p-1 bg-gradient-to-br from-green-400 to-blue-600 text-gray-100 transition duration-200 hover:bg-green-500 m-4 md:mt-12 "
+              className="bg-secondary text-gray-200 text-2xl poppins-medium transition-all duration-150 hover:opacity-95 hover:scale-105 px-10 py-4 rounded-xl"
             >
-              <span className="transition-all ease-in duration-200 bg-gray-600  rounded-lg p-2 hover:bg-opacity-0">Share!</span>
+              <span className="">Share!</span>
             </button>
           </div>
         </div>
@@ -243,7 +248,7 @@ function SpotifyImport() {
             );
           })}
         </div>
-        
+        <Footer/>
       </div>
     </>
   );

@@ -3,6 +3,7 @@ import Navbar from "./../components/Navbar.jsx";
 import PlaylistCard from "../components/PlaylistCard";
 import querystring from "querystring";
 import toast, { Toaster } from "react-hot-toast";
+import Footer from "../components/Footer.jsx";
 
 function SharePage() {
   const [share_page_data, set_share_page_data] = useState([]);
@@ -60,17 +61,17 @@ function SharePage() {
 
   return (
     <>
-      <div className="poppins-regular bg-primary min-h-screen h-full overflow-hidden">
+      <div className="poppins-medium bg-primary h-full overflow-hidden">
         <Navbar />
         <Toaster position="bottom-right" />
         <div className="grid grid-cols-1 place-items-center  justify-center items-center">
           <div className="m-6 sm:m-10">
-            <div className="m-5 grid grid-cols-1 justify-center text-md sm:text-xl md:text-2xl mt-4 text-secondary">
+            <div className="m-5 grid grid-cols-1 justify-center text-xl sm:text-2xl md:text-3xl mt-4 text-secondary">
               <div>
                 Following are the playlists. In order to share this page to a
                 friend, copy this link:{" "}
                 <div
-                  className="text-xl underline sm:text-2xl md:text-3xl flex hover:cursor-pointer text-tertiary transition duration-200  hover:text-gray-100 line-clamp-1"
+                  className="poppins-regular text-xl underline sm:text-2xl md:text-3xl flex hover:cursor-pointer text-tertiary transition duration-200  hover:text-gray-600 line-clamp-1"
                   onClick={select_url}
                 >
                   <img className="w-6 invert"
@@ -80,12 +81,12 @@ function SharePage() {
                   {window.location.href}{" "}
                 </div>{" "}
               </div>
-              <div>
+              <div className="mt-4">
                 If you want to export this data to your accounts, copy this code
                 and choose platform:{" "}
                 <div
-                  className="underline text-xl sm:text-2xl md:text-3xl flex hover:cursor-pointer text-tertiary
-                   transition duration-200  hover:text-gray-100"
+                  className="poppins-regular underline text-xl sm:text-2xl md:text-3xl flex hover:cursor-pointer text-tertiary
+                   transition duration-200  hover:text-gray-600"
                   onClick={select_code}
                 >
                   <img className="w-6 invert"
@@ -146,6 +147,7 @@ function SharePage() {
             );
           })}
         </div>
+        <Footer/>
       </div>
     </>
   );

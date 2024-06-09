@@ -46,12 +46,12 @@ function YoutubeImport() {
     let arr_after_toggle = youtube_selected_array;
     if (arr_after_toggle[index]) {
       arr_after_toggle[index] = 0;
-      change_bg_element.classList.remove("border-red-400");
-      change_bg_element.classList.remove("border-4");
+      change_bg_element.classList.remove("border-gray-200");
+      change_bg_element.classList.remove("border-8");
     } else {
       arr_after_toggle[index] = 1;
-      change_bg_element.classList.add("border-red-400");
-      change_bg_element.classList.add("border-4");
+      change_bg_element.classList.add("border-gray-200");
+      change_bg_element.classList.add("border-8");
     }
     set_youtube_selected_array(arr_after_toggle);
     set_playlist_data(playlist_data);
@@ -125,6 +125,11 @@ function YoutubeImport() {
 
 
   async function Share_youtube_playlists(){
+
+    if(!youtube_selected_array.filter(x => x==1).length){
+      toast.error("Select atleast 1 playlist!")
+    }
+
     let youtube_data_to_be_shared = [];
     youtube_selected_array.map(async (element, index) => {
       if (element) {
@@ -223,7 +228,7 @@ function YoutubeImport() {
       </div> */}
 
 
-<div className="poppins-regular bg-primary h-full min-h-screen overflow-hidden">
+<div className="poppins-regular bg-primary h-full overflow-hidden">
         <Navbar />
         <Toaster position="top-right"/>
         <div className="m-3 grid grid-cols-1 place-items-center md:flex justify-center items-center">
@@ -239,8 +244,8 @@ function YoutubeImport() {
           <div>
           <button
               onClick={Share_youtube_playlists}
-              className="m-4 hover:scale-105 h-16 rounded-xl text-3xl p-1 bg-gradient-to-br from-yellow-400 to-red-600 text-gray-100 transition duration-200 hover:bg-green-500 "
-              ><span className="transition-all ease-in duration-100 bg-secondary  rounded-lg p-2 hover:bg-opacity-0">Share!</span>
+              className="bg-secondary text-gray-200 text-2xl poppins-medium transition-all duration-150 hover:opacity-95 hover:scale-105 px-10 py-4 rounded-xl"
+              ><span className="">Share!</span>
             </button>
           </div>
         </div>
@@ -271,7 +276,7 @@ function YoutubeImport() {
             );
           })}
         </div>
-        
+        <Footer/>
       </div>
     
 

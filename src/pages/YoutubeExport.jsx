@@ -148,7 +148,7 @@ else{
 
   return (
     <>
-      <div className="bg-primary h-full poppins-regular min-h-screen overflow-hidden">
+      <div className="bg-primary h-full poppins-regular  overflow-hidden">
         <Navbar />
         <Toaster position="bottom-right" />
         <div className="m-6 md:m-12 text-secondary grid grid-cols-1 grid-items-center place-items-center">
@@ -160,13 +160,13 @@ else{
             <input
               type="text"
               id="playlist_text_box"
-              className="m-8  border   text-lg rounded-lg max-w-xs md:w-screen p-2.5 bg-gray-700 border-gray-300 placeholder-gray-400  focus:ring-blue-500 focus:border-blue-500"
+              className="text-gray-200 m-8  border   text-lg rounded-lg max-w-xs md:w-screen p-2.5 bg-gray-600 border-gray-300 placeholder-gray-400  focus:ring-blue-500 focus:border-blue-500"
             />
             <div className="m-8 flex justify-center items-center">
             <button
               onClick={fetch_playlist_data}
-              className="hover:scale-105 h-16 rounded-xl text-3xl p-1 bg-gradient-to-br from-orange-400 to-red-600 text-gray-100 transition duration-200 hover:bg-green-500 "
-              ><span className="transition-all ease-in duration-100 bg-secondary  rounded-lg p-2 hover:bg-opacity-0">Submit</span>
+              className="bg-secondary text-gray-200 text-2xl poppins-medium transition-all duration-150 hover:opacity-95 hover:scale-105 px-10 py-4 rounded-xl"
+              ><span className="">Submit</span>
             </button></div>
           </div>
         </div>

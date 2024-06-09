@@ -27,17 +27,17 @@ function Navbar() {
           aria-label="Global"
         >
           <div class="flex items-center justify-between">
-            <div className="flex justify-center gap-4">
+            <div className="flex justify-center ">
+              <a
+                class="flex justify-center gap-2 flex-none poppins-regular text-2xl  md:text-4xl font-semibold text-white"
+                href="/"
+              >
               <img
                 src="/assets/logos/logo.png"
                 alt=""
                 className="w-8 md:w-10"
               />
-              <a
-                class="flex-none poppins-regular text-2xl  md:text-4xl font-semibold text-white"
-                href="/"
-              >
-                Tunella
+               <span>Tunella</span> 
               </a>
             </div>
           </div>
@@ -47,13 +47,13 @@ function Navbar() {
           >
             <div class="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:ps-5">
               <a
-                class="font-medium text-lg md:text-xl  text-green-400 hover:text-green-500"
+                class="font-medium text-lg md:text-xl transition-all duration-25  text-gray-300 hover:text-gray-200"
                 href="/spotify-import"
               >
                 Spotify Playlists
               </a>
               <a
-                class="font-medium text-lg md:text-xl  text-red-400 hover:text-red-500"
+                class="font-medium text-lg md:text-xl transition-all duration-25  text-gray-300 hover:text-gray-200"
                 href="/youtube-import"
               >
                 Youtube Playlists
@@ -63,7 +63,7 @@ function Navbar() {
           <div className="visible sm:hidden">
             <div
               onClick={toggle_navbar}
-              className="border-2 rounded-md p-1 hover:cursor-pointer bg-gray-900 transition-all duration-100 hover:bg-gray-800"
+              className=" hover:cursor-pointer"
             >
               <img
                 src="/assets/icons/hamburger.svg"
@@ -79,7 +79,7 @@ function Navbar() {
                 <ul className="px-6 pt-3">
                   <li>
                     <a
-                      class="font-medium text-lg md:text-xl  text-green-400 hover:text-green-500"
+                      class="font-medium text-lg md:text-xl transition-all duration-25  text-gray-400 hover:text-gray-200"
                       href="/spotify-import"
                     >
                       Spotify Playlists
@@ -87,7 +87,7 @@ function Navbar() {
                   </li>
                   <li className="pt-2">
                     <a
-                      class="font-medium text-lg md:text-xl  text-red-400 hover:text-red-500"
+                      class="font-medium text-lg md:text-xl transition-all duration-25  text-gray-400 hover:text-gray-200"
                       href="/youtube-import"
                     >
                       Youtube Playlists
