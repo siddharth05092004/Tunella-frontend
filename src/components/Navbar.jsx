@@ -74,7 +74,7 @@ function Navbar() {
             
           </div>
         </nav>
-          <div id="dropdown_navbar" className=" sm:hidden flex">
+          <div id="dropdown_navbar" className="hidden sm:hidden flex">
               <div>
                 <ul className="px-6 pt-3">
                   <li>
