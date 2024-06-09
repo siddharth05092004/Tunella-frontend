@@ -5,7 +5,7 @@ import toast, { Toaster } from "react-hot-toast";
 import Footer from "../components/Footer";
 
 function YoutubeExport(props) {
-  const first_success = true
+  
   const redirect_to_youtube =
     "https://accounts.google.com/o/oauth2/auth?" +
     querystring.stringify({
@@ -78,7 +78,7 @@ function YoutubeExport(props) {
     
   }, []);
 
-  async function add_youtube_playlist(playlist_data) {
+  async function add_youtube_playlist(playlist_data,first_success) {
     if (window.location.hash) {
       youtube_access_token = window.location.hash.split("&")[0].substring(14);
     }
@@ -102,7 +102,8 @@ function YoutubeExport(props) {
     if(response.status==403){
       window.location="/quota-over"
     }
-    else if(first_sucess){first_success= false
+    else if(first_sucess){
+      first_success = false
     toast.success("Congrats! Check for the playlist in your Youtube account.");}
     let created_playlist_id_response = await response.json();
     created_playlist_id_response = created_playlist_id_response["id"];
@@ -118,7 +119,7 @@ function YoutubeExport(props) {
 
   async function add_playlists_to_youtube(playlists_data) {
     await playlists_data.map((key, index) => {
-       add_youtube_playlist(key);
+       add_youtube_playlist(key,true);
     });
     // console.log("done")
     
