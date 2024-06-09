@@ -171,7 +171,7 @@ function YoutubeImport() {
     }
     user_channel_response = await user_channel_response.json();
     set_youtube_user_name(
-      user_channel_response["items"][0]["snippet"]["title"]+'!'
+      ", "+user_channel_response["items"][0]["snippet"]["title"]+'!'
     );
   }
 
@@ -234,7 +234,7 @@ function YoutubeImport() {
         <div className="m-3 grid grid-cols-1 place-items-center md:flex justify-center items-center">
           <div>
             <div className="justify-center flex mt-10 text-5xl text-secondary">
-              <span>Hi, {youtube_user_name}</span>
+              <span>Hi{youtube_user_name}</span>
             </div>
             <div className="flex justify-center text-2xl mt-4 text-secondary">
               Following are your playlists we could fetch, select the ones you

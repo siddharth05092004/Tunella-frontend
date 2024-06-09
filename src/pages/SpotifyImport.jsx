@@ -45,7 +45,7 @@ function SpotifyImport() {
     const user_data = await response.json();
     console.log(user_data)
     spotify_user_id = user_data["id"];
-    set_display_name(user_data["display_name"]+'!');
+    set_display_name(", "+user_data["display_name"]+'!');
     const response_playlists = await fetch(
       `https://api.spotify.com/v1/users/${spotify_user_id}/playlists/`,
       {
@@ -204,7 +204,7 @@ function SpotifyImport() {
         <div className="m-3 grid grid-cols-1 place-items-center md:flex justify-center items-center gap-8">
           <div>
             <div className="justify-center flex mt-10 text-5xl text-secondary">
-              Hi, {display_name}
+              Hi{display_name}
             </div>
             <div className="flex justify-center text-2xl mt-4 text-secondary">
               Following are your playlists we could fetch, select the ones you
