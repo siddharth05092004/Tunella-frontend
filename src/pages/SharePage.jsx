@@ -60,17 +60,17 @@ function SharePage() {
 
   return (
     <>
-      <div className="bg-indigo-600 min-h-screen h-full overflow-hidden">
+      <div className="poppins-regular bg-primary min-h-screen h-full overflow-hidden">
         <Navbar />
         <Toaster position="bottom-right" />
         <div className="grid grid-cols-1 place-items-center  justify-center items-center">
           <div className="m-6 sm:m-10">
-            <div className="m-5 grid grid-cols-1 justify-center text-md sm:text-xl md:text-2xl mt-4 text-red-300 font-mono">
+            <div className="m-5 grid grid-cols-1 justify-center text-md sm:text-xl md:text-2xl mt-4 text-secondary">
               <div>
                 Following are the playlists. In order to share this page to a
                 friend, copy this link:{" "}
                 <div
-                  className="text-lg sm:text-2xl md:text-3xl flex hover:cursor-pointer text-gray-300 transition duration-200  hover:text-gray-100 line-clamp-1"
+                  className="text-xl underline sm:text-2xl md:text-3xl flex hover:cursor-pointer text-tertiary transition duration-200  hover:text-gray-100 line-clamp-1"
                   onClick={select_url}
                 >
                   <img className="w-6 invert"
@@ -84,7 +84,8 @@ function SharePage() {
                 If you want to export this data to your accounts, copy this code
                 and choose platform:{" "}
                 <div
-                  className="text-lg sm:text-2xl md:text-3xl flex hover:cursor-pointer text-gray-300 transition duration-200  hover:text-gray-100"
+                  className="underline text-xl sm:text-2xl md:text-3xl flex hover:cursor-pointer text-tertiary
+                   transition duration-200  hover:text-gray-100"
                   onClick={select_code}
                 >
                   <img className="w-6 invert"
@@ -98,7 +99,7 @@ function SharePage() {
           </div>
           <div>
             <div className="flex justify-center">
-              <div className="text-gray-200 grid max-w-2xl place-items-center grid-items-center grid-cols-1  md:mx-24 md:grid-cols-2 text-4xl">
+              <div className="text-secondary grid max-w-2xl place-items-center grid-items-center grid-cols-1  md:mx-24 md:grid-cols-2 text-4xl">
                 <a
                   href={redirect_to_spotify}
                   className="transition-all duration-300 hover:scale-105 p-4 sm:p-8 flex gap-4 justify-center items-center"

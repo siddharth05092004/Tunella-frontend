@@ -148,11 +148,11 @@ else{
 
   return (
     <>
-      <div className="bg-indigo-600 h-full min-h-screen overflow-hidden">
+      <div className="bg-primary h-full poppins-regular min-h-screen overflow-hidden">
         <Navbar />
         <Toaster position="bottom-right" />
-        <div className="m-6 md:m-12 text-gray-100 grid grid-cols-1 grid-items-center place-items-center">
-          <p className="max-w-5xl mt-10 text-2xl font-mono sm:mt-20 sm:text-2xl md:text-4xl text-red-400 flex justify-center">
+        <div className="m-6 md:m-12 text-secondary grid grid-cols-1 grid-items-center place-items-center">
+          <p className="max-w-5xl mt-10 text-2xl sm:mt-20 sm:text-2xl md:text-4xl text-secondary flex justify-center">
             Hi! Enter the code and the playlists will be added to your youtube
             account.
           </p>
@@ -166,7 +166,7 @@ else{
             <button
               onClick={fetch_playlist_data}
               className="hover:scale-105 h-16 rounded-xl text-3xl p-1 bg-gradient-to-br from-orange-400 to-red-600 text-gray-100 transition duration-200 hover:bg-green-500 "
-              ><span className="transition-all ease-in duration-100 bg-indigo-900  rounded-lg p-2 hover:bg-opacity-0">Submit</span>
+              ><span className="transition-all ease-in duration-100 bg-secondary  rounded-lg p-2 hover:bg-opacity-0">Submit</span>
             </button></div>
           </div>
         </div>

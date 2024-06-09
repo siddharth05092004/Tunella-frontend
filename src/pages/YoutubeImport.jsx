@@ -166,7 +166,7 @@ function YoutubeImport() {
     }
     user_channel_response = await user_channel_response.json();
     set_youtube_user_name(
-      user_channel_response["items"][0]["snippet"]["title"]
+      user_channel_response["items"][0]["snippet"]["title"]+'!'
     );
   }
 
@@ -223,25 +223,24 @@ function YoutubeImport() {
       </div> */}
 
 
-<div className="bg-indigo-600 h-full min-h-screen overflow-hidden">
+<div className="poppins-regular bg-primary h-full min-h-screen overflow-hidden">
         <Navbar />
         <Toaster position="top-right"/>
         <div className="m-3 grid grid-cols-1 place-items-center md:flex justify-center items-center">
           <div>
-            <div className="justify-center flex mt-10 text-5xl text-gray-100">
-              Hi, {youtube_user_name}!
+            <div className="justify-center flex mt-10 text-5xl text-secondary">
+              <span>Hi, {youtube_user_name}</span>
             </div>
-            <div className="flex justify-center text-2xl mt-4 text-gray-200">
+            <div className="flex justify-center text-2xl mt-4 text-secondary">
               Following are your playlists we could fetch, select the ones you
               want to export/share.
             </div>
           </div>
           <div>
-            <button
+          <button
               onClick={Share_youtube_playlists}
-              className="hover:scale-105  mt-3 sm:mt-1 p-2 border-4 rounded-xl border-gray-800 bg-red-800 transition-all ease-in duration-150 hover:bg-red-700 text-gray-200 text-4xl"
-            >
-              Share!
+              className="m-4 hover:scale-105 h-16 rounded-xl text-3xl p-1 bg-gradient-to-br from-yellow-400 to-red-600 text-gray-100 transition duration-200 hover:bg-green-500 "
+              ><span className="transition-all ease-in duration-100 bg-secondary  rounded-lg p-2 hover:bg-opacity-0">Share!</span>
             </button>
           </div>
         </div>

@@ -15,7 +15,12 @@ export default {
     "./src/components/TestCredentials.jsx",
   ],
   theme: {
-    extend: {},
+    extend: {colors: {
+      'primary':"#B09FCA",
+      'secondary':'#544275',
+      'tertiary':'#27272A'
+    }},
+    
   },
   plugins: [],
 }

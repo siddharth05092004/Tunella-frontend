@@ -21,20 +21,20 @@ function TestCredentials() {
 
   return (
     <>
-      <div className="bg-indigo-600 text-gray-200 h-screen">
+      <div className="poppins-regular bg-primary text-gray-200 h-screen">
         <Navbar />
         <Toaster position="bottom-right"/>
         <div className="m-8 max-w-lg grid grid-cols-1 grid-items-center place-items-center ">
-          <div className="text-2xl md:text-4xl max-w-5xl text-green-400">
+          <div className="text-2xl md:text-4xl max-w-5xl text-secondary">
             <p>
               If you are not a registered tester, you can use the following
               credentials to test the app for both spotify and youtube, click to copy:
             </p>
           </div>
-          <div className="mt-4 md:mt-8 text-2xl md:text-4xl grid grid-cols-1 justify-center max-w-sm">
-            <span className="flex hover:cursor-pointer hover:text-gray-100 transition-all duration-100" onClick={copy_email}>E-mail: tunellatest@gmail.com <img src="/assets/icons/copy.svg" className="invert w-8"/></span>
-            <span className="flex  hover:cursor-pointer hover:text-gray-100 transition-all duration-100" onClick={copy_password}>Password: tunellatest123<img src="/assets/icons/copy.svg" className="invert w-8"/></span>
-            <span className="flex  hover:cursor-pointer hover:text-gray-100 transition-all duration-100" onClick={copy_both}>Copy both<img src="/assets/icons/copy.svg" className="invert w-8"/></span>
+          <div className="mt-4 underline md:mt-8 text-2xl md:text-4xl grid grid-cols-1 justify-center max-w-sm text-tertiary">
+            <span className="flex hover:cursor-pointer hover:text-gray-200 transition-all duration-100" onClick={copy_email}>E-mail: tunellatest@gmail.com <img src="/assets/icons/copy.svg" className="invert w-8"/></span>
+            <span className="flex  hover:cursor-pointer hover:text-gray-200 transition-all duration-100" onClick={copy_password}>Password: tunellatest123<img src="/assets/icons/copy.svg" className="invert w-8"/></span>
+            <span className="flex  hover:cursor-pointer hover:text-gray-200 transition-all duration-100" onClick={copy_both}>Copy both<img src="/assets/icons/copy.svg" className="invert w-8"/></span>
           </div>
         </div>
         <Footer />

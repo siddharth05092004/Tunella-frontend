@@ -10,7 +10,7 @@ function PlaylistCard(props) {
           initial={{ opacity: 0, scale:0.80,y:50}}
           whileInView={{ opacity: 1, scale:1,y:0 }}
           transition={{ duration: 0.1 }}
-          viewport={{ once: true }} className={`  h-full bg-gray-900 text-gray-300 rounded-xl  flex overflow-hidden hover:cursor-pointer` }>
+          viewport={{ once: true }} className={`  h-full bg-tertiary  text-gray-300 rounded-xl  flex overflow-hidden hover:cursor-pointer poppins-regular` }>
       
           <img src={props.image_url} className="w-12" alt="" />
           <div className=" p-3 ">

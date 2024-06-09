@@ -45,7 +45,7 @@ function SpotifyImport() {
     const user_data = await response.json();
     console.log(user_data)
     spotify_user_id = user_data["id"];
-    set_display_name(user_data["display_name"]);
+    set_display_name(user_data["display_name"]+'!');
     const response_playlists = await fetch(
       `https://api.spotify.com/v1/users/${spotify_user_id}/playlists/`,
       {
@@ -193,15 +193,15 @@ function SpotifyImport() {
 
   return (
     <>
-      <div className="bg-indigo-600 h-full min-h-screen overflow-hidden">
+      <div className="poppins-regular bg-primary h-full min-h-screen overflow-hidden">
         <Navbar />
         <Toaster position="top-right"/>
         <div className="m-3 grid grid-cols-1 place-items-center md:flex justify-center items-center">
           <div>
-            <div className="justify-center flex mt-10 text-5xl text-gray-100">
-              Hi, {display_name}!
+            <div className="justify-center flex mt-10 text-5xl text-secondary">
+              Hi, {display_name}
             </div>
-            <div className="flex justify-center text-2xl mt-4 text-gray-200">
+            <div className="flex justify-center text-2xl mt-4 text-secondary">
               Following are your playlists we could fetch, select the ones you
               want to export/share.
             </div>
@@ -209,9 +209,9 @@ function SpotifyImport() {
           <div>
             <button
               onClick={Share_spotify_playlists}
-              className=" hover:scale-105 mt-3 sm:mt-1 p-2 border-4 rounded-xl border-gray-800 bg-green-400 transition-all ease-in duration-150 hover:bg-green-500 text-gray-800 text-4xl"
+              className=" hover:scale-105  h-16 rounded-xl text-3xl p-1 bg-gradient-to-br from-green-400 to-blue-600 text-gray-100 transition duration-200 hover:bg-green-500 m-4 md:mt-12 "
             >
-              Share!
+              <span className="transition-all ease-in duration-200 bg-gray-600  rounded-lg p-2 hover:bg-opacity-0">Share!</span>
             </button>
           </div>
         </div>
