@@ -102,7 +102,7 @@ function YoutubeExport(props) {
     if(response.status==403){
       window.location="/quota-over"
     }
-    else if(first_sucess){
+    else if(first_success){
       first_success = false
     toast.success("Congrats! Check for the playlist in your Youtube account.");}
     let created_playlist_id_response = await response.json();
