@@ -58,7 +58,7 @@ function Home(props) {
           className="m-8 md:m-16"
         >
           <div className="poppins-medium flex justify-center">
-            <span className="py-5 text-4xl md:text-6xl ">
+            <span className="py-5 text-5xl md:text-6xl ">
               Welcome to Tunella!
             </span>
           </div>
