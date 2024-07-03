@@ -1,10 +1,11 @@
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import SpotifyExport from './pages/SpotifyExport.jsx';
+
 import SpotifyImport from './pages/SpotifyImport.jsx';
+import SpotifyTokenHandler from "./pages/SpotifyTokenHandler.jsx";
+import YoutubeTokenHandler from "./pages/YoutubeTokenHandler.jsx";
 import YoutubeImport from './pages/YoutubeImport.jsx';
-import YoutubeExport from './pages/YoutubeExport.jsx';
 import SharePage from "./pages/SharePage.jsx";
 import Home from './pages/Home.jsx';
 import TestCredentials from './pages/TestCredentials.jsx';
@@ -22,9 +23,9 @@ function App() {
         <Route path="/quota-over" element={<Home value="quota-over"/>}/>
         
         <Route path="/spotify-import" element={<SpotifyImport/>} />
-        <Route path="/spotify-export" element={<SpotifyExport/>} />
+        <Route path="/spotify-export" element={<SpotifyTokenHandler/>} />
         <Route path="/youtube-import" element={<YoutubeImport/>} />
-        <Route path="/youtube-export" element={<YoutubeExport/>} />
+        <Route path="/youtube-export" element={<YoutubeTokenHandler/>} />
         <Route path="/share" element={<SharePage/>} />
 
         <Route path="/test-credentials" element={<TestCredentials/>} />

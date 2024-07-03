@@ -83,7 +83,7 @@ function Home(props) {
                 <span>Spotify</span>
               </a>
               <a
-                href={redirect_to_youtube}
+                href={redirect_to_youtube } target="_blank"
                 className="transition-all duration-300 hover:scale-105 p-4 sm:p-8 flex gap-4 justify-center items-center"
               >
                 <img

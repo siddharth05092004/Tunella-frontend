@@ -28,10 +28,12 @@ function SpotifyExport(props) {
     else{
       window.location = redirect_to_spotify;
     }
+
+    
     
   }, []);
 
-  async function check_validity(){
+  async function check_validity(spotify_access_token){
     const response = await fetch("https://api.spotify.com/v1/me", {
       headers: {
         Authorization: "Bearer " + spotify_access_token,
