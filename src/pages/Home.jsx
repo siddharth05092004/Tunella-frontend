@@ -4,6 +4,7 @@ import querystring from "querystring";
 import { useEffect } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { motion } from "framer-motion";
+import Loading from "../components/Loading.jsx";
 
 function Home(props) {
   useEffect(() => {
@@ -24,6 +25,11 @@ function Home(props) {
     }
     if(props.value == "default-error"){
       toast.error("Page Not Found");
+    }
+    const loading_animation = document.getElementById("loading_id");
+    
+    for (let i = 0; i < loading_animation.childNodes.length; i++) {
+      loading_animation.childNodes[i].classList.add('hidden')
     }
   }, []);
 
@@ -49,6 +55,7 @@ function Home(props) {
     <>
       <div className="poppins-regular bg-primary text-secondary  ">
         <Navbar />
+        <Loading/>
         <Toaster position="bottom-right" />
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
@@ -83,7 +90,7 @@ function Home(props) {
                 <span>Spotify</span>
               </a>
               <a
-                href={redirect_to_youtube } target="_blank"
+                href={redirect_to_youtube } 
                 className="transition-all duration-300 hover:scale-105 p-4 sm:p-8 flex gap-4 justify-center items-center"
               >
                 <img
@@ -96,6 +103,7 @@ function Home(props) {
             </div>
           </div>
         </motion.div>
+        
         <Footer className=" fixed top-0 left-0 right-0"/>
       </div>
     </>

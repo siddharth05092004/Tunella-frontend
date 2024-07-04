@@ -4,6 +4,7 @@ import PlaylistCard from "../components/PlaylistCard";
 import querystring from 'querystring';
 import Footer from "../components/Footer";
 import toast, { Toaster } from "react-hot-toast";
+import Loading from "../components/Loading.jsx";
 
 
 function SpotifyImport() {
@@ -59,6 +60,12 @@ function SpotifyImport() {
     // const loader = document.getElementById('loading');
     // loader.classList.add('hidden');
     selected_array_builder();
+
+    const loading_animation = document.getElementById("loading_id");
+    
+    for (let i = 0; i < loading_animation.childNodes.length; i++) {
+      loading_animation.childNodes[i].classList.add('hidden')
+    }
     
   }
 
@@ -200,6 +207,7 @@ function SpotifyImport() {
     <>
       <div className="poppins-regular bg-primary h-full  overflow-hidden">
         <Navbar />
+        <Loading/>
         <Toaster position="top-right"/>
         <div className="m-3 grid grid-cols-1 place-items-center md:flex justify-center items-center gap-8">
           <div>

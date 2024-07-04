@@ -4,6 +4,7 @@ import PlaylistCard from "../components/PlaylistCard";
 import querystring from "querystring";
 import toast, { Toaster } from "react-hot-toast";
 import Footer from "../components/Footer.jsx";
+import Loading from "../components/Loading.jsx";
 
 function SharePage() {
   const [share_page_data, set_share_page_data] = useState([]);
@@ -92,6 +93,13 @@ function SharePage() {
 
       }
     });
+
+    const loading_animation = document.getElementById("loading_id");
+    
+    for (let i = 0; i < loading_animation.childNodes.length; i++) {
+      loading_animation.childNodes[i].classList.add('hidden')
+    }
+
   }, []);
     //----------------------------------------Spotify logic
 
@@ -334,6 +342,7 @@ function SharePage() {
     <>
       <div className="poppins-medium bg-primary h-full overflow-hidden">
         <Navbar />
+        <Loading/>
         <Toaster position="bottom-right" />
         <div className="grid grid-cols-1 place-items-center  justify-center items-center">
           <div className="m-6 sm:m-10">
