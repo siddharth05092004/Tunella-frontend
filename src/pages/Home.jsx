@@ -104,7 +104,7 @@ function Home(props) {
           </div>
         </motion.div>
         
-        <Footer className=" fixed top-0 left-0 right-0"/>
+        {/* <Footer className=" fixed top-0 left-0 right-0"/> */}
       </div>
     </>
   );
